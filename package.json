@@ -1,0 +1,23 @@
+{
+  "name": "syzoj-data-packer",
+  "version": "1.0.0",
+  "description": "啥时候出 SYZOJ-NG 啊（手动 @Menci",
+  "main": "index.js",
+  "scripts": {
+    "start": "./bin/syzoj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memset0/syzoj-data-packer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memset0/syzoj-data-packer/issues"
+  },
+  "homepage": "https://github.com/memset0/syzoj-data-packer#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "rd": "^2.0.1"
+  }
+}
