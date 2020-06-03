@@ -81,8 +81,8 @@ function main(rootpath, possibleInputExtra = ['.in'], possibleOutputExtra = ['.o
 		},
 		template: {
 			subtask: [],
-			inputFile: '#.' + inputExtra,
-			outputFile: '#.' + outputExtra,
+			inputFile: '#' + inputExtra,
+			outputFile: '#' + outputExtra,
 		}
 	});
 	fs.writeFileSync(path.join(rootpath, 'data.yml'), YAML.stringify(data));
