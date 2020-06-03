@@ -43,6 +43,21 @@ function main(rootpath, possibleInputExtra = ['.in'], possibleOutputExtra = ['.o
 		})
 		return dst
 	})(testdata);
+
+	let type = _.maxBy(Object.keys(modules).map(type => {
+		return {
+			name: type,
+			score: modules[type].check({
+				rootpath: rootpath,
+				filelist: filelist,
+				testdata: testdata
+			})
+		}
+	}), o => o.score);
+
+	if (!type.score) throw new Error('[SYZOJ] 找不到合适的数据包类型。');
+	let lib = modules[type.name];
+
 	if (rename) {
 		testdata.forEach((testcase) => {
 			let key = stringRandom(8, { letters: 'ABCDEF' });
@@ -58,6 +73,20 @@ function main(rootpath, possibleInputExtra = ['.in'], possibleOutputExtra = ['.o
 		})
 	};
 
+	let data = lib.pack({
+		rootpath: rootpath,
+		filelist: filelist,
+		testdata: testdata,
+		config: {
+		},
+		template: {
+			subtask: [],
+			inputFile: '#.' + inputExtra,
+			outputFile: '#.' + outputExtra,
+		}
+	});
+	fs.writeFileSync(path.join(rootpath, 'data.yml'), YAML.stringify(data));
+	console.log(data);
 }
 
 main(path.resolve('./data'))
