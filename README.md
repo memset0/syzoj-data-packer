@@ -6,7 +6,9 @@
 
 ```shell
 git clone https://github.com/memset0/syzoj-data-packer
-chmod +x ./syzoj-data-packer/bin/syzoj
-ln -s ./syzoj-data-packer/bin/syzoj /usr/local/bin/syzoj
+cd syzoj-data-packer
+npm install
+chmod +x ./bin/syzoj
+ln -s ./bin/syzoj /usr/local/bin/syzoj
 syzoj
 ```
