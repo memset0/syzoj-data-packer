@@ -18,6 +18,7 @@
   "homepage": "https://github.com/memset0/syzoj-data-packer#readme",
   "dependencies": {
     "lodash": "^4.17.15",
-    "rd": "^2.0.1"
+    "rd": "^2.0.1",
+    "string-random": "^0.1.3"
   }
 }
